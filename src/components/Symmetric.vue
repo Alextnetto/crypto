@@ -14,11 +14,11 @@
       <div class="row">
         <form action="#" class="col-md-6">
           <div class="form-group">
-            <label class="floatLeft">Secret Key:</label>
+            <label class="floatLeft">Chave secreta:</label>
             <input type="text" v-model="secretkey" class="form-control" />
           </div>
           <div class="form-group">
-            <label class="floatLeft">Plain Text:</label>
+            <label class="floatLeft">Mensagem original:</label>
             <textarea class="form-control" v-model="plaintext" rows="8" cols="50"></textarea>
           </div>
           <div class="form-group floatLeft">
@@ -28,12 +28,12 @@
               ref="encrypt"
               @click="operation('encrypt')"
               class="btn btn-primary"
-            >Encrypt</button>
+            >Criptografar</button>
           </div>
         </form>
         <form action="#" class="col-md-6">
           <div class="form-group">
-            <label class="floatLeft">Cipher Text:</label>
+            <label class="floatLeft">Mensagem criptografada:</label>
             <textarea class="form-control" v-model="ciphertext" rows="9" cols="50"></textarea>
           </div>
           <div class="form-group floatLeft">
@@ -43,7 +43,7 @@
               ref="decrypt"
               @click="operation('decrypt')"
               class="btn btn-primary"
-            >Decrypt</button>
+            >Descriptografar</button>
           </div>
         </form>
       </div>
@@ -58,8 +58,8 @@ export default {
   name: "HashPage",
   data() {
     return {
-      plaintext: "This is your secret message!",
-      secretkey: "Password1@",
+      plaintext: "Essa é a sua mensagem secreta!",
+      secretkey: "Senha1@",
       ciphertext: ""
     };
   },
@@ -77,7 +77,7 @@ export default {
                 res = symmetric.encryptData(this.secretkey, this.plaintext);
                 this.ciphertext = res;
               } else {
-                alert("Error: Plaintext is empty");
+                alert("Erro: Mensagem original vazia!");
               }
               break;
             case "decrypt":
@@ -85,16 +85,16 @@ export default {
                 res = symmetric.decryptData(this.secretkey, this.ciphertext);
                 this.plaintext = res;
               } else {
-                alert("Error: Ciphertext is empty");
+                alert("Erro: Mensagem criptografada está vazia");
               }
               break;
             default:
           }
         } else {
-          alert("Error: Secret Key or Plain Text is empty");
+          alert("Erro: Chave secreta ou Mensagem original está vazia");
         }
       } catch (e) {
-        alert(`Error : ${e.message}`);
+        alert(`Erro : ${e.message}`);
       }
     }
   },

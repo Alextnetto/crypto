@@ -25,15 +25,16 @@
                 <div class="row">
                   <form action="#" class="col-md-12">
                     <div class="form-group">
-                      <h4>Zero Knowledge Proof of Age</h4>
+                      <h4>Prova de zero conhecimento de idade</h4>
                       <hr>
                       <p>
-                        In cryptography, a zero-knowledge proof or zero-knowledge protocol is a method by which one party (the prover) can prove to another party (the verifier) that they know a value x, without conveying any information apart from the fact that they know the value x. The essence of zero-knowledge proofs is that it is trivial to prove that one possesses knowledge of certain information by simply revealing it; the challenge is to prove such possession without revealing the information itself or any additional information. (Source: <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">Wikipedia</a>)
+                        Em criptografia, uma prova de conhecimento zero ou protocolo de conhecimento zero é um método pelo qual uma parte (o provador) pode provar à outra parte (o verificador) que uma determinada afirmação é verdadeira, sem transmitir qualquer informação além do fato de que a afirmação é realmente verdadeira. A essência das provas de conhecimento zero é que é trivial provar que alguém possui conhecimento de certas informações simplesmente revelando-as. O desafio é provar tal posse sem revelar a própria informação ou qualquer informação adicional. (Fonte: <a href="https://pt.wikipedia.org/wiki/Prova_de_conhecimento_zero">Wikipedia</a>)
                       </p>
                       <p>
-                        In this demo I (the holder) want to proof to someone (the verifier) that his age is above certain number (say 18+). To do that
-                        I will ask my issuer to issue me a certificate (which will contain the challenge and the proof) - the zero knowledge proof - so that I can produce that to the verifier.
-                        The verifier then can verify the the proof submitted by my without having to know my real age.
+                        <!-- TODO: Traduzir e entender mais sobre zk -->
+                        Nesta demonstração, eu (o titular) quero provar a alguém (o verificador) que sua idade está acima de um determinado número (digamos 18+). Fazer isso
+                        Vou pedir ao meu emissor para me emitir um certificado (que conterá o desafio e a prova) - a prova de conhecimento zero - para que eu possa produzir isso para o verificador.
+                        O verificador pode então verificar a prova apresentada por mim sem ter de saber a minha idade real.
                       </p>
                       <hr>
                       <p>

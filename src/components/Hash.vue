@@ -8,7 +8,7 @@
 <div class="row">
     <form action="#" class="col-md-8">
         <div class="form-group">
-            <label class="floatLeft">Data:</label>
+            <label class="floatLeft">Dados:</label>
             <textarea  class="form-control" @change="gotosubpage()" v-model="plaintext" rows="8" cols="50"></textarea>
         </div>
         <div class="form-group">

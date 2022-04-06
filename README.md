@@ -9,34 +9,34 @@ A tool to play and learn basic concept of cryptography. Checkout the playgroung 
 - [Benchmarking Framework ZKP frameworks](https://docs.zkproof.org/pages/standards/accepted-workshop3/proposal-benchmarking.pdf) - Paper
 - [Other Zkp](https://medium.com/@aurelcode/cryptographic-accumulators-da3aa4561d77)
 
-## 
+##
 
 ```bash
 npm install -g @vue/cli
-git clone 
-cd 
-npm i 
+git clone
+cd
+npm i
 npm run serve
 ```
 
 ## Features
 
 - [Basic concept of cryptography](docs/README.md)
-    - Hashing
-    - Symmetric Key Cryptography
-    - Asymmetric Key Cryptography
-    - Digital Signature
+  - Hashing
+  - Criptografia simétrica
+  - Criptografia assimétrica
+  - Digital Signature
 
 ## Libraries
 
 - Hashing
-    - [Blakejs](https://www.npmjs.com/package/blakejs)
-    - [SHA js](https://www.npmjs.com/package/sha.js)
-- Symmetric Key Cryptography
-    - [Aes-js](https://www.npmjs.com/package/aes-js) with CTR mode
-- Asymmetric Key Cryptography
-    - [TweetNacl](https://www.npmjs.com/package/tweetnacl)
-    - [Ed2Curve](https://www.npmjs.com/package/ed2curve)
+  - [Blakejs](https://www.npmjs.com/package/blakejs)
+  - [SHA js](https://www.npmjs.com/package/sha.js)
+- Criptografia simétrica
+  - [Aes-js](https://www.npmjs.com/package/aes-js) with CTR mode
+- Criptografia assimétrica
+  - [TweetNacl](https://www.npmjs.com/package/tweetnacl)
+  - [Ed2Curve](https://www.npmjs.com/package/ed2curve)
 
 ## Screens
 
@@ -44,15 +44,14 @@ npm run serve
 
 ![hash](public/images/hash-tab.png)
 
-### Symmetric Key Cryptography
+### Criptografia simétrica
 
 ![symme](public/images/symm-key-encryption.png)
 
-
-### Asymmetric Key Cryptography
+### Criptografia assimétrica
 
 #### Generating Key Pair
- 
+
 ![symme](public/images/Asymmetric-kp.png)
 
 #### Encryption
@@ -72,5 +71,3 @@ npm run serve
 **Verifying Message**
 
 ![symme](public/images/verify.png)
-
-

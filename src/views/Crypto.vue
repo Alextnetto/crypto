@@ -22,19 +22,19 @@
     <div class="col-md-8 centeralign">
       <b-card no-body style="padding: 20px">
         <b-tabs content-class="mt-3">
-          <b-tab title="Introduction" active>
+          <b-tab title="Introdução" active>
             <Introduction/>
           </b-tab>
           <b-tab title="Hashing">
             <Hash />
           </b-tab>
-          <b-tab title="Symmetric">
+          <b-tab title="Simétrico">
             <Symmetric />
           </b-tab>
-          <b-tab title="Asymmetric">
+          <b-tab title="Assimétrico">
             <Asymmetric />
           </b-tab>
-          <b-tab title="Zero Knowledge Proof">
+          <b-tab title="Prova de zero conhecimento">
             <ZKP />
           </b-tab>
         </b-tabs>

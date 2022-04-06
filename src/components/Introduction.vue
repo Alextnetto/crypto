@@ -15,17 +15,17 @@
             <a
               href="https://github.com/Vishwas1/crypto/blob/master/docs/README.md"
               target="_blank"
-            >Basic concept of cryptography</a>
+            >Conceitos básicos de criptografia</a>
             <ul>
               <li>Hashing</li>
-              <li>Symmetric Key Cryptography</li>
-              <li>Asymmetric Key Cryptography</li>
-              <li>Digital Signature</li>
-              <li>Zero Knowledge Proof (of age)</li>
+              <li>Criptografia simétrica</li>
+              <li>Criptografia assimétrica</li>
+              <li>Assinatura digital</li>
+              <!-- <li>Prova de conhecimento zero (de idade) [zk]</li> -->
             </ul>
           </li>
           <li>
-            Uses following libraries
+            Foram usadas as seguintes bibliotecas
             <ul>
               <li>
                 Hashing
@@ -39,15 +39,15 @@
                 </ul>
               </li>
               <li>
-                Symmetric Key Cryptography
+                Criptografia simétrica
                 <ul>
                   <li>
-                    <a href="https://www.npmjs.com/package/aes-js" target="_blank">Aes-js</a> with CTR mode
+                    <a href="https://www.npmjs.com/package/aes-js" target="_blank">Aes-js</a> com modo CTR
                   </li>
                 </ul>
               </li>
               <li>
-                Asymmetric Key Cryptography
+                Criptografia assimétrica
                 <ul>
                   <li>
                     <a href="https://www.npmjs.com/package/tweetnacl" target="_blank">TweetNacl</a>
@@ -60,18 +60,18 @@
             </ul>
           </li>
           <li>
-            <a href="https://github.com/Vishwas1/crypto" target="_blank">Source Code</a>
+            <a href="https://github.com/Alextnetto/crypto" target="_blank">Código fonte</a>
           </li>
         </ul>
       </div>
     </div>
     <div class="col-md-6">
       <p>
-        <h5>Encourage me by giving this repo a <b>star</b>! :)</h5>
+        <h5>Me apoie deixando uma <b>estrela</b> no repositório! </h5>
       </p>
       <div
         class="github-card"
-        data-github="vishwas1/crypto"
+        data-github="Alextnetto/crypto"
         data-width="400"
         data-height
         data-theme="default"

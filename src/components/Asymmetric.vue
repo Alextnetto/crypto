@@ -15,7 +15,7 @@
       <div>
         <b-card no-body>
           <b-tabs card vertical nav-wrapper-class="w-30">
-            <b-tab title="Key Pair" active>
+            <b-tab title="Par de chaves" active>
               <b-card-text>
                 <div class="row">
                   <form action="#" class="col-md-12">
@@ -24,7 +24,7 @@
                         type="button"
                         class="btn btn-primary"
                         @click="generatekp()"
-                      >Generate Keypair</button>
+                      >Gerar par de chaves</button>
                     </div>
                   </form>
                 </div>
@@ -33,15 +33,29 @@
                     <div class="form-group">
                       <table class="table table-bordered">
                         <tr>
-                          <th>Public Key</th>
+                          <th>Chave pública de quem envia</th>
                           <td>
-                            <input type="text" style="width:100%" v-model="publickey" disabled />
+                            <input type="text" style="width:100%" v-model="senderPublicKey" disabled />
                           </td>
                         </tr>
                         <tr>
-                          <th>Private Key</th>
+                          <th>Chave privada de quem envia</th>
                           <td>
-                            <input type="text" style="width:100%" v-model="privatekey" disabled />
+                            <input type="text" style="width:100%" v-model="senderPrivateKey" disabled />
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="table table-bordered">
+                        <tr>
+                          <th>Chave pública de quem recebe</th>
+                          <td>
+                            <input type="text" style="width:100%" v-model="recipientPublicKey" disabled />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Chave privada de quem recebe</th>
+                          <td>
+                            <input type="text" style="width:100%" v-model="recipientPrivateKey" disabled />
                           </td>
                         </tr>
                       </table>
@@ -50,16 +64,16 @@
                 </div>
               </b-card-text>
             </b-tab>
-            <b-tab title="Encryption">
+            <b-tab title="Encriptar">
               <b-card-text>
                 <div class="row">
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Plain Text:</label>
+                      <label class="floatLeft">Mensagem original:</label>
                       <textarea class="form-control" v-model="plaintext" rows="8" cols="50"></textarea>
                     </div>
                     <div class="form-group">
-                      <label class="floatLeft">Recipient's Public Key:</label>
+                      <label class="floatLeft">Chave pública de quem recebe:</label>
                       <input type="text" v-model="recipientPublicKey" class="form-control" />
                     </div>
                     <div class="form-group floatLeft">
@@ -68,29 +82,29 @@
                         data-toggle="modal"
                         @click="operation('encrypt')"
                         class="btn btn-primary"
-                      >Encrypt</button>
+                      >Criptografar</button>
                     </div>
                   </form>
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Cipher Text:</label>
+                      <label class="floatLeft">Mensagem criptografada:</label>
                       <textarea class="form-control" v-model="cipherText" rows="8" cols="50"></textarea>
                     </div>
                   </form>
                 </div>
               </b-card-text>
             </b-tab>
-            <b-tab title="Decryption">
+            <b-tab title="Desencriptar">
               <b-card-text>
                 <div class="row">
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Cipher Text:</label>
+                      <label class="floatLeft">Mensagem criptografada:</label>
                       <textarea class="form-control" v-model="cipherText" rows="8" cols="50"></textarea>
                     </div>
                     <div class="form-group">
-                      <label class="floatLeft">Recipient's Private Key:</label>
-                      <input type="text" v-model="recipientSecretKey" class="form-control" />
+                      <label class="floatLeft">Chave privada de quem recebe:</label>
+                      <input type="text" v-model="recipientPrivateKey" class="form-control" />
                     </div>
                     <div class="form-group floatLeft">
                       <button
@@ -98,28 +112,28 @@
                         data-toggle="modal"
                         @click="operation('decrypt')"
                         class="btn btn-primary"
-                      >Decrypt</button>
+                      >Descriptografar</button>
                     </div>
                   </form>
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Plain Text:</label>
+                      <label class="floatLeft">Mensagem original:</label>
                       <textarea class="form-control" v-model="decryptPlaintext" rows="8" cols="50"></textarea>
                     </div>
                   </form>
                 </div>
               </b-card-text>
             </b-tab>
-            <b-tab title="Sign">
+            <b-tab title="Assinar">
               <b-card-text>
                 <div class="row">
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Plain Text:</label>
+                      <label class="floatLeft">Mensagem original:</label>
                       <textarea class="form-control" v-model="plaintext" rows="8" cols="50"></textarea>
                     </div>
                     <div class="form-group">
-                      <label class="floatLeft">Sender's Private Key:</label>
+                      <label class="floatLeft">Chave privada de quem envia:</label>
                       <input type="text" v-model="senderPrivateKey" class="form-control" />
                     </div>
                     <div class="form-group floatLeft">
@@ -128,35 +142,35 @@
                         data-toggle="modal"
                         @click="dsOperation('sign')"
                         class="btn btn-primary"
-                      >Sign</button>
+                      >Assinar</button>
                     </div>
                   </form>
                   <form action="#" class="col-md-6">
                     <div class="form-group">
-                      <label class="floatLeft">Signed Message:</label>
+                      <label class="floatLeft">Mensagem assinada digitalmente:</label>
                       <textarea class="form-control" v-model="signedMessage" rows="8" cols="50"></textarea>
                     </div>
                   </form>
                 </div>
               </b-card-text>
             </b-tab>
-            <b-tab title="Verify">
+            <b-tab title="Verificar">
               <b-card-text>
                 <div class="row">
                   <form action="#" class="col-md-12">
                     <div class="row">
                       <div class="form-group col-md-6">
-                        <label class="floatLeft">Signed Message:</label>
+                        <label class="floatLeft">Mensagem assinada digitalmente:</label>
                         <textarea class="form-control" v-model="signedMessage" rows="8" cols="50"></textarea>
                       </div>
                       <div class="form-group col-md-6">
-                        <label class="floatLeft">Plain Text:</label>
+                        <label class="floatLeft">Mensagem original:</label>
                         <textarea class="form-control" v-model="plaintext" rows="8" cols="50"></textarea>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-md-6">
-                        <label class="floatLeft">Sender's Public Key:</label>
+                        <label class="floatLeft">Chave pública de quem envia:</label>
                         <input type="text" v-model="senderPublicKey" class="form-control" />
                       </div>
                       <div class="form-group col-md-6">
@@ -165,7 +179,7 @@
                           data-toggle="modal"
                           @click="dsOperation('verify')"
                           class="btn btn-primary floatLeft"
-                        >Verify</button>
+                        >Verificar</button>
                       </div>
                     </div>
                   </form>
@@ -186,11 +200,9 @@ export default {
   components: {},
   data() {
     return {
-      publickey: "",
-      privatekey: "",
-      plaintext: "This is your secret message!",
+      plaintext: "Essa é a sua mensagem secreta!",
       recipientPublicKey: "",
-      recipientSecretKey: "",
+      recipientPrivateKey: "",
       cipherText: "",
       decryptPlaintext: "",
       senderPrivateKey: "",
@@ -201,9 +213,13 @@ export default {
   created() {},
   methods: {
     generatekp: function() {
-      const keys = asymmetric.generateKeyPair();
-      this.publickey = keys.publicKey;
-      this.privatekey = keys.secretKey;
+      const recipientKeys = asymmetric.generateKeyPair();
+      this.recipientPublicKey = recipientKeys.publicKey;
+      this.recipientPrivateKey = recipientKeys.secretKey;
+
+      const senderKeys = asymmetric.generateKeyPair();
+      this.senderPublicKey = senderKeys.publicKey;
+      this.senderPrivateKey = senderKeys.secretKey;
     },
     operation: function(op) {
       try {
@@ -220,7 +236,7 @@ export default {
           case "decrypt":
             if (this.cipherText != {}) {
               res = asymmetric.decrypt(
-                this.recipientSecretKey,
+                this.recipientPrivateKey,
                 JSON.parse(this.cipherText)
               );
               this.decryptPlaintext = JSON.stringify(res);
