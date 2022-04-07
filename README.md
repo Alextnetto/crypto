@@ -9,9 +9,6 @@ Essa ferramenta faz parte do caminho de [aprendizado de Blockchain](https://gith
 ## Rodando localmente
 
 ```bash
-npm install -g @vue/cli
-git clone
-cd
 npm i
 npm run serve
 ```
