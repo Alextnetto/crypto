@@ -1,15 +1,12 @@
-# Cryptography Tool
+# Criptografia
 
-A tool to play and learn basic concept of cryptography. Checkout the playgroung [here](https://vishwas1.github.io/crypto/index.html#/crypto)
+Uma ferramenta simples para entender conceitos criptográficos simples, veja [aqui](https://alextnetto.github.io/crypto/)
 
-## Resources
+## Por que disso?
 
-- [Practical book about cryptography for developers](https://cryptobook.nakov.com/) - A book
-- [Practical Cryptography With Go](https://leanpub.com/gocrypto/read#leanpub-auto-chapter-5-digital-signatures) - A book
-- [Benchmarking Framework ZKP frameworks](https://docs.zkproof.org/pages/standards/accepted-workshop3/proposal-benchmarking.pdf) - Paper
-- [Other Zkp](https://medium.com/@aurelcode/cryptographic-accumulators-da3aa4561d77)
+Essa ferramenta faz parte do caminho de [aprendizado de Blockchain](https://github.com/Alextnetto/blockchain-roadmap)!
 
-##
+## Rodando localmente
 
 ```bash
 npm install -g @vue/cli
@@ -21,13 +18,13 @@ npm run serve
 
 ## Features
 
-- [Basic concept of cryptography](docs/README.md)
+- [Conceitos abordados](docs/README.md)
   - Hashing
   - Criptografia simétrica
   - Criptografia assimétrica
-  - Digital Signature
+  - Assinatura digital
 
-## Libraries
+## Bibliotecas
 
 - Hashing
   - [Blakejs](https://www.npmjs.com/package/blakejs)
@@ -38,36 +35,4 @@ npm run serve
   - [TweetNacl](https://www.npmjs.com/package/tweetnacl)
   - [Ed2Curve](https://www.npmjs.com/package/ed2curve)
 
-## Screens
-
-### Hashing
-
-![hash](public/images/hash-tab.png)
-
-### Criptografia simétrica
-
-![symme](public/images/symm-key-encryption.png)
-
-### Criptografia assimétrica
-
-#### Generating Key Pair
-
-![symme](public/images/Asymmetric-kp.png)
-
-#### Encryption
-
-![symme](public/images/asymm-encryption.png)
-
-#### Decryption
-
-![symme](public/images/Asymme-decryption.png)
-
-#### Digital Signature
-
-**Signing Message**
-
-![symme](public/images/signing.png)
-
-**Verifying Message**
-
-![symme](public/images/verify.png)
+Esse projeto foi traduzido e alterado por mim, Alex. Mas o projeto original você encontra [aqui](https://github.com/Vishwas1/crypto)
